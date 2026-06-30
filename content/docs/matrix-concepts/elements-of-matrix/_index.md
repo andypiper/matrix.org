@@ -100,20 +100,21 @@ will listen to events, parse them, and (for example) send automatic replies.
 
 ### Simple and advanced bots
 
-A good example of a simple bot would be an RSS bot: it subscribes to an RSS feed
+A good example of a simple bot is an RSS bot: it subscribes to an RSS feed
 completely outside of Matrix, and whenever it sees a new item in the feed it
 posts a message in a specific Matrix room, with the name of the item. A bot like
-this is nothing more than a very limited and specialised client.
+this is nothing more than a very limited and specialised Matrix client.
 
 Sometimes, you need to get a more global view of what is happening on your
-homeserver to take action. If you want to write an anti-spam module for example,
-you want to be able to read each and every message from public rooms, to detect
-patterns and ring the alarm, or to take action directly.
+homeserver, in order to take action. For example, if you want to write an anti-spam
+module, you will want to be able to read each and every message from public
+rooms, to detect patterns and ring the alarm, or to take action directly.
 
-To do this with a bot, you would need to invite the bot to each and every room
-where you want monitoring to happen. By contrast, an appservice is able to monitor
-all the _unencrypted_ events (messages sent/edited/redacted, people joining or
-leaving rooms) within its namespace.
+If you wanted do this with a simple bot, you would need to invite it to each and
+every room where you wanted monitoring to happen. By contrast, Matrix supports
+AppServices, which are able to monitor all the _unencrypted_ events (messages
+sent/edited/redacted, people joining or leaving rooms) within their namespace.
+This would be a more advanced bot.
 
 ### Bridges
 
